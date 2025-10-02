@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday siso 💝</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+    html, body {
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f9e9ff 0%, #ffe9f6 100%);
+      min-height: 100vh;
+      color: #5a3d5c;
+      display: flex;
+      justify-content: center;
+    }
+
+    .handwriting {
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .bg-heart {
+      background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8904321c-c31a-4b2b-b459-de14b14a1773.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .countdown-container {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(234, 64, 164, 0.2);
+    }
+
+    .timer-digit {
+      font-size: 2rem;
+      background: linear-gradient(45deg, #ff76a2, #ff4d8d);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 10px rgba(255, 76, 141, 0.2);
+    }
+
+    @media (min-width: 768px) {
+      .timer-digit {
+        font-size: 3rem;
+      }
+    }
+
+    .firework {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px 2px;
+      animation: firework-animation 2s ease-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes firework-animation {
+      0% { transform: translate(0, 0); opacity: 1; }
+      100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff4d8d;
+      animation: float 4s ease-in-out infinite;
+      opacity: 0;
+      font-size: 1.5rem;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
+
+    .btn-heart {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-heart::after {
+      content: '💖';
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      animation: heart-rain 3s linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes heart-rain {
+      0% { transform: translateY(0); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body class="relative overflow-hidden">
+  <div id="background-hearts"></div>
+
+  <!-- Background Music (Hidden at First) -->
+  <audio id="bg-music">
+    <source src="Galliyan Song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative z-10 text-center">
+    <div class="mb-8">
+      <h1 class="handwriting text-4xl sm:text-5xl md:text-7xl text-pink-600 mb-2">Happy Birthday Chotee❣️</h1>
+      <h2 class="text-lg sm:text-xl md:text-2xl font-light">💞Best Friend Forever💞</h2>
+    </div>
+
+    <div class="w-full max-w-3xl">
+      <img src="j3.jpg" alt="Birthday Image"
+        class="w-full max-h-[60vh] object-cover rounded-2xl shadow-xl mb-8" />
+    </div>
+
+    <div class="countdown-container p-4 sm:p-6 md:p-12 w-full max-w-2xl mb-8">
+      <h3 class="text-lg sm:text-xl mb-6">Your Special Surprise Arrives In:</h3>
+      <div class="flex justify-center flex-wrap gap-4">
+        <div>
+          <div class="timer-digit" id="days">00</div>
+          <div>Days</div>
+        </div>
+        <div>
+          <div class="timer-digit" id="hours">00</div>
+          <div>Hours</div>
+        </div>
+        <div>
+          <div class="timer-digit" id="minutes">00</div>
+          <div>Minutes</div>
+        </div>
+        <div>
+          <div class="timer-digit" id="seconds">00</div>
+          <div>Seconds</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="surprise-message" class="hidden opacity-0 transition-opacity duration-1000 max-w-2xl px-4 text-center">
+      <h2 class="handwriting text-4xl sm:text-5xl md:text-6xl text-pink-600 mb-4">Surprise Bestie</h2>
+      <p class="text-base sm:text-lg leading-relaxed mb-8">
+        💖 Happiest Birthday, Siso ❣️
+        <br>
+         🎉♾💐 <br />
+   Happy birthday to my big sister  <br>
+   Thank you for teaching me so much throughout the years—from how to be strong to how to laugh through the tough times.<br>
+   Your guidance and wisdom have shaped me into who I am today, and I'm endlessly grateful for your presence in my life.<br>
+    I hope your day is filled with all the happiness and relaxation you deserve.<br>
+    Hope your birthday is as wonderful as you are<br>
+        Let’s make this birthday unforgettable 💝<br /><br /><br />
+        Your's<br />
+        <span class="handwriting text-4xl sm:text-5xl text-pink-600">Brother 😎</span>
+      </p>
+      <button id="more-hearts"
+        class="btn-heart bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full text-lg shadow-lg transform transition hover:scale-105">
+       Happiest Birthday Once Again....
+      </button>
+    </div>
+  </div>
+
+  <script>
+  const countDownDate = new Date("2025-10-02T13:00:00").getTime();
+  const bgMusic = document.getElementById("bg-music");
+  let musicPlayed = false;
+
+  // Play music safely (after interaction if needed)
+  function tryPlayMusic() {
+    if (!musicPlayed) {
+      bgMusic.volume = 0.3;
+      bgMusic.play().then(() => {
+        musicPlayed = true;
+      }).catch(() => {
+        console.log("Waiting for user interaction to play music.");
+      });
+    }
+  }
+
+  // Allow music to play after any user interaction
+  document.addEventListener('click', () => {
+    tryPlayMusic();
+  });
+
+  // Check and update countdown every second
+  const x = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+    document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+    if (distance < 0) {
+      clearInterval(x);
+      document.querySelector('.countdown-container').classList.add('hidden');
+      const surprise = document.getElementById('surprise-message');
+      surprise.classList.remove('hidden');
+      setTimeout(() => surprise.classList.add('opacity-100'), 100);
+      createFireworks();
+      createFloatingHearts(30);
+      tryPlayMusic();  // Play music if not already
+    }
+  }, 1000);
+
+  function createFireworks() {
+    const colors = ['#ff4d8d', '#ff76a2', '#ff9ab7', '#ffb7cb', '#ffd6e0'];
+    for (let i = 0; i < 50; i++) {
+      setTimeout(() => {
+        const firework = document.createElement('div');
+        firework.className = 'firework';
+        firework.style.left = Math.random() * 90 + 'vw';
+        firework.style.top = Math.random() * 90 + 'vh';
+        firework.style.color = colors[Math.floor(Math.random() * colors.length)];
+        firework.style.setProperty('--tx', (Math.random() * 200 - 100) + 'px');
+        firework.style.setProperty('--ty', (Math.random() * 200 - 100) + 'px');
+        document.body.appendChild(firework);
+        setTimeout(() => firework.remove(), 2000);
+      }, i * 100);
+    }
+  }
+
+  function createFloatingHearts(count) {
+    const container = document.getElementById('background-hearts');
+    for (let i = 0; i < count; i++) {
+      setTimeout(() => {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * 90 + 'vw';
+        heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+        heart.style.animationDelay = (Math.random() * 2) + 's';
+        container.appendChild(heart);
+        setInterval(() => {
+          heart.style.left = Math.random() * 90 + 'vw';
+          heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+          heart.style.bottom = '-50px';
+        }, 5000);
+      }, i * 300);
+    }
+  }
+
+  document.getElementById('more-hearts').addEventListener('click', function () {
+    createFloatingHearts(15);
+    createFireworks();
+    tryPlayMusic();
+  });
+
+  createFloatingHearts(10);
+
+  // Play music immediately if countdown already over
+  if (new Date().getTime() > countDownDate) {
+    document.querySelector('.countdown-container').classList.add('hidden');
+    const surprise = document.getElementById('surprise-message');
+    surprise.classList.remove('hidden');
+    setTimeout(() => surprise.classList.add('opacity-100'), 100);
+    createFireworks();
+    createFloatingHearts(30);
+    tryPlayMusic();
+  }
+</script>
+
+</body>
+</html>
